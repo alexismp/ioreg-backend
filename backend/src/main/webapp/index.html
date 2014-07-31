@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ping my Registration endpoint</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://apis.google.com/js/client.js?onload=api_init"></script>
+        <script>
+            function ready() {
+                gapi.client.io14reg.get_attendee({'id': '007'}).execute(function(resp) {
+//                    if (!resp.code)
+                        alert(resp.text); // “Dr. James Bond”
+                });
+                
+//                gapi.client.io14reg.
+            }
+            function api_init() {
+                gapi.client.load('io14reg', 'v1', ready, '//' + window.location.host + '/_ah/api');
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
