@@ -4,22 +4,16 @@
         <title>Ping my Registration endpoint</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://apis.google.com/js/client.js?onload=api_init"></script>
-        <script>
-            function ready() {
-                gapi.client.io14reg.get_attendee({'id': '007'}).execute(function(resp) {
-//                    if (!resp.code)
-                        alert(resp.text); // “Dr. James Bond”
-                });
-                
-//                gapi.client.io14reg.
-            }
-            function api_init() {
-                gapi.client.load('io14reg', 'v1', ready, '//' + window.location.host + '/_ah/api');
-            }
-        </script>
+        <script src="js/app.js"></script>
+        <!-- The gapi-chrome-apps.js code comes from this Chrome App-specific
+        lib : https://github.com/GoogleChrome/chrome-app-samples/tree/master/gapi-chrome-apps-lib
+        The endpoints documented code using https://apis.google.com/js/client.js
+        does NOT work. -->
+        <script src="js/gapi-chrome-apps.js"></script>
     </head>
     <body>
-
+        <div>
+            <output id="outputLog"></output>
+        </div>
     </body>
 </html>

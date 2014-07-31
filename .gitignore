@@ -2,3 +2,4 @@
 backend/eclipse-launch-profiles/DevAppServer.launch
 
 backend/eclipse-launch-profiles/UpdateApplication.launch
+/backend/target/
