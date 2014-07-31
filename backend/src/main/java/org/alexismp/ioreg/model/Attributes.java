@@ -1,10 +1,7 @@
 package org.alexismp.ioreg.model;
 
 import com.google.api.server.spi.config.ApiResourceProperty;
-import com.google.api.server.spi.config.ApiTransformer;
-import org.alexismp.ioreg.AttrTransformer;
 
-@ApiTransformer(AttrTransformer.class)
 public class Attributes {
     @ApiResourceProperty(name="attendeeType")
     public String attendeeType;
