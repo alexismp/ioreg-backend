@@ -7,8 +7,8 @@ public class Attributes {
     public String attendeeType;
     @ApiResourceProperty(name="checkedIn")
     public boolean checkedIn = false;
-    @ApiResourceProperty(name="size")
-    public String shirtSize = "XXXXXS";
+    @ApiResourceProperty(name="shirtSize")
+    public String shirtSize = "XXS";
     @ApiResourceProperty(name="country")
     public String country;
     @ApiResourceProperty(name="attendeeStatus")
@@ -16,7 +16,17 @@ public class Attributes {
     @ApiResourceProperty(name="pickedUp")
     public boolean pickedUp = false;
     @ApiResourceProperty(name="counter")
-    public String counter;        
+    public String counter;
+    @ApiResourceProperty(name="checkInTime")
+    public String checkinTime;    
+
+    public String getCheckinTime() {
+        return checkinTime;
+    }
+
+    public void setCheckinTime(String checkinTime) {
+        this.checkinTime = checkinTime;
+    }
 
     public String getAttendeeType() {
         return attendeeType;

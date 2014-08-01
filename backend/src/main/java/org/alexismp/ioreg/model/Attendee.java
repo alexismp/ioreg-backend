@@ -7,7 +7,7 @@ public class Attendee {
     @ApiResourceProperty(name="id")
     public String id;
     @ApiResourceProperty(name="customerId")
-    public String googlePlusId;   // G+ id?
+    public String googlePlusId;
     @ApiResourceProperty(name="num")
     public String num;
     @ApiResourceProperty(name="email")
@@ -18,8 +18,6 @@ public class Attendee {
     public String last;
     @ApiResourceProperty(name="title")
     public String title;
-    @ApiResourceProperty(name="additionalInfo3")    // TODO: check
-    public String checkinTime;
     
     @ApiResourceProperty(name="attrList")
     public Attributes attrList;
@@ -33,9 +31,11 @@ public class Attendee {
         this.first = first;
         this.last = lastName;
         this.title = title;
-        this.checkinTime = checkinTime;
         attrList = new Attributes();
-        attrList.attendeeType = "Attendee";
+        attrList.checkedIn = true;
+        attrList.checkinTime = checkinTime;
+        attrList.counter = "Googlers / Youth";
+        attrList.attendeeType = "Googler";
     }
     
     // Attendee created with just name and checked-in status set to TRUE
@@ -47,9 +47,11 @@ public class Attendee {
                 first,     // first
                 last,      // lastName
                 "M.",       // title                
-                "2014-05-24-15.03.59.000000");        // time
+                "2014-08-01T11:39:41.058Z");        // time
         attrList.checkedIn = true;
-        attrList.counter = "Checked-in";
+        attrList.counter = "A-B";
+        attrList.shirtSize = "L";
+        attrList.attendeeType = "Attendee";
     }
     
     // random attendee, created as NOT checked-in
@@ -61,9 +63,9 @@ public class Attendee {
                 "John",     // first
                 "Doe",      // lastName
                 "Dr.",      // title
-                "yyyy-MM-dd-hh.mm.ss.ffffff");    // time
+                "2014-08-01T08:29:41.058Z");    // time
         attrList.checkedIn = false;
-        attrList.counter = "Not checked-in";
+        attrList.counter = "Sandbox";
     }
 
     public String getId() {
@@ -120,14 +122,6 @@ public class Attendee {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getCheckinTime() {
-        return checkinTime;
-    }
-
-    public void setCheckinTime(String checkinTime) {
-        this.checkinTime = checkinTime;
     }
 
     public Attributes getAttrList() {

@@ -29,8 +29,8 @@ public class RegistrationAPI {
     public static List<Attendee> attendees = new ArrayList<>();
 
     public RegistrationAPI() throws InterruptedException {
-        // add attendee with id set to 007
-        attendees.add(new Attendee("007", "007", "aNum", "some@email.foo", "James", "Bond", "Dr.", ""));
+        // add attendee with id set to 007.
+        attendees.add(new Attendee("007", "007", "aNum", "some@email.foo", "James", "Bond", "Dr.", "2014-08-01T06:15:41.058Z"));
         // a few "checked-in" attendees
         attendees.add(new Attendee("John", "Doe")); Thread.sleep(150);
         attendees.add(new Attendee("Jack", "Mercy")); Thread.sleep(150);
@@ -53,8 +53,7 @@ public class RegistrationAPI {
             }
         }
         System.out.println("Returning " + result.size() + " attendees.");
-        return result;  // TODO: check with François if json collection name
-                        // needs to be "registrantList" (currently "items")
+        return result;
     }
 
     @ApiMethod(name = "get_attendee",
